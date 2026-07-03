@@ -148,16 +148,19 @@ const Home = ({ setRoute, currency = { code: 'INR', symbol: '₹', rate: 83.5 } 
   return (
     <div style={{ position: 'relative' }}>
       {/* 2. Hero Section */}
-      <section style={{ 
-        position: 'relative', 
-        minHeight: '100vh', 
-        overflow: 'hidden', 
-        display: 'flex', 
-        flexDirection: 'column',
-        justifyContent: 'center', 
-        alignItems: 'center',
-        padding: '8rem 2rem 6rem'
-      }}>
+      <section 
+        className="hero-viewport"
+        style={{ 
+          position: 'relative', 
+          minHeight: '100vh', 
+          overflow: 'hidden', 
+          display: 'flex', 
+          flexDirection: 'column',
+          justifyContent: 'center', 
+          alignItems: 'center',
+          padding: '8rem 2rem 6rem'
+        }}
+      >
         <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1 }} />
         
         {/* Vignette Overlay */}

@@ -219,6 +219,38 @@ function App() {
 
       {/* Footer Layout */}
       <Footer setRoute={handleRouteUpdate} />
+
+      {/* Mobile Floating Quick-Actions Bar */}
+      <div className="mobile-only-action-bar">
+        <a 
+          href="https://wa.me/1234567890" 
+          target="_blank" 
+          rel="noreferrer"
+          className="action-bar-btn"
+          style={{ color: '#10b981' }}
+        >
+          <span style={{ fontSize: '1.25rem' }}>💬</span>
+          <span>WhatsApp</span>
+        </a>
+        <div style={{ width: '1px', background: 'rgba(255,255,255,0.1)', height: '24px' }} />
+        <button 
+          onClick={() => handleRouteUpdate('book-consultation')}
+          className="action-bar-btn"
+          style={{ color: '#00f0ff' }}
+        >
+          <span style={{ fontSize: '1.25rem' }}>⚡</span>
+          <span>Book Session</span>
+        </button>
+        <div style={{ width: '1px', background: 'rgba(255,255,255,0.1)', height: '24px' }} />
+        <button 
+          onClick={() => handleRouteUpdate('contact')}
+          className="action-bar-btn"
+          style={{ color: '#8b5cf6' }}
+        >
+          <span style={{ fontSize: '1.25rem' }}>✉️</span>
+          <span>Inquire</span>
+        </button>
+      </div>
     </>
   );
 }

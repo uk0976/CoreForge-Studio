@@ -87,7 +87,7 @@ const Technologies = () => {
         <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1.8fr', gap: '4rem' }} className="tech-split">
           
           {/* Left Column: 10 Categories List */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div className="tech-tabs-container" style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -155,7 +155,24 @@ const Technologies = () => {
         @media (max-width: 900px) {
           .tech-split {
             grid-template-columns: 1fr !important;
-            gap: 2.5rem !important;
+            gap: 1.5rem !important;
+          }
+          .tech-tabs-container {
+            flex-direction: row !important;
+            overflow-x: auto !important;
+            padding: 0.5rem 0.25rem !important;
+            gap: 0.5rem !important;
+            white-space: nowrap !important;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+          .tech-tabs-container::-webkit-scrollbar {
+            display: none;
+          }
+          .tech-tabs-container button {
+            flex-shrink: 0 !important;
+            padding: 0.8rem 1.2rem !important;
+            font-size: 0.85rem !important;
           }
         }
       `}</style>
