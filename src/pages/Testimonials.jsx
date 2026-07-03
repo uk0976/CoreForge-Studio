@@ -31,7 +31,7 @@ const Testimonials = () => {
           </div>
 
           {/* Core Forge Pledge */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginTop: '3.5rem' }} className="testimonials-pledge">
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginTop: '3.5rem', flexWrap: 'wrap' }} className="testimonials-pledge">
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
               <Award size={14} color="#00f0ff" />
               <span>100% Genuine Reviews</span>

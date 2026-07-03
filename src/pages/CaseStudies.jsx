@@ -99,6 +99,27 @@ const CaseStudies = () => {
           ))}
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .case-header-split {
+            flex-direction: column !important;
+            gap: 1.5rem !important;
+          }
+          .case-header-metrics {
+            width: 100% !important;
+            justify-content: space-between !important;
+          }
+          .case-content-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
+          .case-bottom-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };

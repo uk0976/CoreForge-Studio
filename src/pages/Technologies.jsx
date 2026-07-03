@@ -150,6 +150,15 @@ const Technologies = () => {
 
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .tech-split {
+            grid-template-columns: 1fr !important;
+            gap: 2.5rem !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };

@@ -297,6 +297,19 @@ const Contact = () => {
           )}
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .contact-split {
+            grid-template-columns: 1fr !important;
+            gap: 1.25rem !important;
+          }
+          .inquiry-dropdowns {
+            grid-template-columns: 1fr !important;
+            gap: 1.25rem !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };

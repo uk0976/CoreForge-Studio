@@ -284,6 +284,7 @@ const Navbar = ({ currentRoute, setRoute, currency, setCurrency }) => {
 
       {/* Fullscreen Overlay Menu */}
       <div 
+        className="fullscreen-menu-overlay"
         style={{
           position: 'fixed',
           top: 0,
@@ -431,16 +432,22 @@ const Navbar = ({ currentRoute, setRoute, currency, setCurrency }) => {
           color: #00f0ff;
         }
         @media (max-width: 768px) {
+          .fullscreen-menu-overlay {
+            justify-content: flex-start !important;
+            overflow-y: auto !important;
+            padding-top: 6rem !important;
+            padding-bottom: 4rem !important;
+          }
           .menu-grid {
             grid-template-columns: 1fr !important;
-            gap: 2rem !important;
-            overflow-y: auto;
-            max-height: 70vh;
+            gap: 2.5rem !important;
+            overflow-y: visible !important;
+            max-height: none !important;
           }
           .menu-footer {
             flex-direction: column;
             gap: 1rem;
-            margin-top: 2rem !important;
+            margin-top: 3rem !important;
             text-align: center;
           }
         }

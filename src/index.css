@@ -534,6 +534,19 @@ p {
   }
 }
 
+@media (max-width: 600px) {
+  .hero-cta-btns {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .hero-cta-btns button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
 /* Premium Selection Box Styling */
 select {
   appearance: none;

@@ -395,6 +395,25 @@ const BookConsultation = () => {
 
         </div>
       </section>
+
+      <style>{`
+        @media (max-width: 950px) {
+          .consult-split {
+            grid-template-columns: 1fr !important;
+            gap: 2.5rem !important;
+          }
+        }
+        @media (max-width: 650px) {
+          .consult-form-grid, .consult-form-grid-2 {
+            grid-template-columns: 1fr !important;
+            gap: 1.25rem !important;
+          }
+          .features-selector-grid {
+            grid-template-columns: 1fr !important;
+            gap: 0.75rem !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };
