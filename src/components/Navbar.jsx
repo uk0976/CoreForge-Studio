@@ -117,6 +117,7 @@ const Navbar = ({ currentRoute, setRoute, currency, setCurrency }) => {
         />
 
         <div 
+          className="navbar-header-row"
           style={{
             maxWidth: '1400px',
             margin: '0 auto',
@@ -175,7 +176,7 @@ const Navbar = ({ currentRoute, setRoute, currency, setCurrency }) => {
           </nav>
 
           {/* CTA & Menu Buttons */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+          <div className="navbar-actions-row" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
             <button 
               onClick={() => navigateTo('book-consultation')}
               className="btn btn-secondary desktop-only interactive-hover"
@@ -206,7 +207,7 @@ const Navbar = ({ currentRoute, setRoute, currency, setCurrency }) => {
                 }}
               >
                 <span>{currency ? currency.flag : '🇮🇳'} {currency ? currency.symbol : '₹'}</span>
-                <span style={{ fontSize: '0.75rem', opacity: 0.8 }}>{currency ? currency.code : 'INR'}</span>
+                <span className="currency-code-label" style={{ fontSize: '0.75rem', opacity: 0.8 }}>{currency ? currency.code : 'INR'}</span>
               </div>
 
               {isCurrencyOpen && (
@@ -432,6 +433,15 @@ const Navbar = ({ currentRoute, setRoute, currency, setCurrency }) => {
           color: #00f0ff;
         }
         @media (max-width: 768px) {
+          .navbar-header-row {
+            padding: 0.75rem 1rem !important;
+          }
+          .navbar-actions-row {
+            gap: 0.55rem !important;
+          }
+          .currency-code-label {
+            display: none !important;
+          }
           .fullscreen-menu-overlay {
             justify-content: flex-start !important;
             overflow-y: auto !important;

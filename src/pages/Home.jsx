@@ -178,7 +178,7 @@ const Home = ({ setRoute, currency = { code: 'INR', symbol: '₹', rate: 83.5 } 
             <span style={{ fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>CoreForge Studio Launching 2026</span>
           </div>
 
-          <h1 style={{ marginBottom: '1.5rem', letterSpacing: '-0.04em' }}>
+          <h1 className="hero-headline" style={{ marginBottom: '1.5rem' }}>
             We Build Websites That <br />
             <span className="gradient-text glow-text">Grow Businesses.</span>
           </h1>
