@@ -1,16 +1,58 @@
-# React + Vite
+# CoreForge Studio - Premium Digital Agency Web Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+CoreForge Studio is a newly launched, high-performance web design and development agency. This repository contains the complete custom-coded React application built to establish a premium digital presence, demonstrate front-end capabilities, and secure early scoping partnerships.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Cinematic Interaction Design**: A dark-theme glassmorphic interface styled with custom CSS layout tokens and a hardware-accelerated interactive canvas particle network.
+* **Featured Concept Projects**: 10 comprehensive showcase prototypes (Restaurant menu, Real Estate, Fitness, Travel, Legal, Medical, and Creative Portfolios) with detailed scoping objectives, design approaches, and expected outcomes.
+* **Bespoke Service Catalog**: 20 specialized cards (from UI/UX Figma drafting to custom database app scaling) specifying ideal audiences, timelines, and pricing estimates.
+* **Multi-Currency System**: A custom globe dropdown in the header that converts all pricing metrics across the site between **INR (₹ - Default)**, **USD ($)**, **EUR (€)**, **GBP (£)**, and **AED (د.إ)**, persisting choices via `localStorage`.
+* **Premium Custom Selection Dropdowns**: Completely replaces native browser select popups with custom glassmorphic React components featuring rotating chevrons and glowing neon hover/focus rings.
+* **Full-Page Vertical Timeline**: An alternating vertical timeline mapping out our 10-stage development process from Discovery Call to Post-launch Support.
+* **Performance Tuning**: Zero heavy template builders or bloated code. Reusable React components styled in Vanilla CSS for responsive loading performance.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Technology Stack
 
-## Expanding the Oxlint configuration
+* **Frontend Framework**: [React](https://react.dev/) + [Vite](https://vite.dev/) (Fast HMR development environment)
+* **Animation & Interaction**: [GSAP](https://gsap.com/) + [Framer Motion](https://www.framer.com/motion/)
+* **Icons**: [Lucide React](https://lucide.dev/)
+* **Effects**: [Canvas Confetti](https://github.com/catdad/canvas-confetti)
+* **Smooth Scroll**: [Lenis Scroll](https://github.com/darkroomengineering/lenis)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+## 💻 Local Development Setup
+
+To run the project locally on your machine, follow these steps:
+
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed (version 18+ recommended).
+
+### 1. Install Dependencies
+Clone the repository, open a terminal in the folder, and run:
+```bash
+npm install
+```
+
+### 2. Start the Local Server
+Launch the local Vite development server:
+```bash
+npm run dev
+```
+Open **[http://localhost:5173/](http://localhost:5173/)** in your browser to view the live site.
+
+### 3. Build for Production
+To generate a compiled, optimized, and minified production bundle in the `/dist` folder:
+```bash
+npm run build
+```
+
+---
+
+## 🌐 Deployment
+This project is fully ready for one-click deployment on global CDN platforms:
+* **Vercel**: Import the GitHub repository directly and select the default Vite build preset.
+* **Netlify**: Set the build command to `npm run build` and the publish directory to `dist`.
