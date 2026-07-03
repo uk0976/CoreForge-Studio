@@ -261,6 +261,92 @@ export const agencyData = {
       support: "12 Weeks"
     }
   ],
+  portfolio: [
+    {
+      id: "restaurant-case",
+      title: "Epicurean Bistro Digital Transformation",
+      client: "Epicurean Group",
+      category: "Restaurant Website",
+      timeline: "3 Weeks",
+      overview: "Replaced a traditional PDF-only restaurant menu structure with a bespoke, interactive visual plating showcase that drove local bookings.",
+      problem: "The client was losing table bookings because their mobile site loaded a slow 10MB PDF menu, frustrating users on cellular networks.",
+      research: "We audited user behaviour and found 65% of visitors bounced when clicking the menu. We designed a web-native menu that loads under 0.5s.",
+      solution: "Built a custom React interface with image lazy-loading, responsive typography, and an automated booking calendar mock.",
+      results: "Menu load times dropped from 8 seconds to 0.4 seconds, resulting in an estimated 32% increase in reservations.",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      id: "realestate-case",
+      title: "Aero Estates Platform Launch",
+      client: "Aero Holdings",
+      category: "Real Estate Website",
+      timeline: "4 Weeks",
+      overview: "Designed an elite real estate listings portal utilizing large-scale media panels and high-contrast styling details.",
+      problem: "Standard listings portals looked cluttered and template-locked, failing to convey the luxury of the estates.",
+      research: "We researched high-net-worth buyer patterns and noticed they prioritised minimal typography, clear spec grids, and immersive imagery.",
+      solution: "Engineered a custom React catalog with smooth page wipes, custom filters, and large slider components.",
+      results: "Created a template-defying visual experience that established immediate authority for the startup.",
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+  careers: [
+    {
+      id: "frontend-dev",
+      title: "Creative Frontend Developer",
+      location: "Remote (India/Europe)",
+      type: "Full-Time",
+      description: "We are seeking a talented React developer who loves UI/UX detail and can craft premium, fluid animations using GSAP and CSS.",
+      requirements: [
+        "3+ years of experience with React, Vite, and modern CSS modules.",
+        "Deep knowledge of UI animations (GSAP, Framer Motion, or custom CSS keyframes).",
+        "An eye for premium design: spacing, typography, and contrast details."
+      ],
+      responsibilities: [
+        "Write clean, semantic, and reusable React components.",
+        "Collaborate with designers to implement high-fidelity interactive screens.",
+        "Optimize page speeds and ensure solid cross-browser responsive layouts."
+      ]
+    },
+    {
+      id: "fullstack-architect",
+      title: "Senior Full-Stack Architect",
+      location: "Remote (India)",
+      type: "Full-Time",
+      description: "Looking for an engineer to lead our custom web application setups, database architectures, and API integrations.",
+      requirements: [
+        "5+ years of experience with Node.js, Express, and database systems (SQL/NoSQL).",
+        "Experience building secure JWT authentication and roles systems.",
+        "Comfortable with Cloudflare, Vercel, and modern CI/CD setups."
+      ],
+      responsibilities: [
+        "Architect scalable database structures and serverless endpoints.",
+        "Ensure secure database routing and robust state management.",
+        "Guide junior developers and structure backend deployment flows."
+      ]
+    }
+  ],
+  blog: [
+    {
+      id: "power-of-custom-code",
+      title: "The Power of Custom Code vs. Page Builders",
+      category: "Design",
+      summary: "Why premium brands are abandoning template drag-and-drop builders for bespoke React and custom layouts.",
+      date: "June 28, 2026",
+      readTime: "5 min read",
+      content: "Template builders like WordPress or Wix are great for initial mockups, but they inject massive code bloat, slowing down page loads and hurting Google rankings. In contrast, custom React and clean CSS load in under 1 second, providing custom transition controls and a unique, premium design footprint that represents authority.",
+      image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      id: "optimizing-react-speed",
+      title: "Optimizing React and Vite for 100/100 PageSpeed",
+      category: "Technology",
+      summary: "A practical guide to asset compression, code splitting, and lazy loading images in React builds.",
+      date: "July 2, 2026",
+      readTime: "6 min read",
+      content: "Page speed is a critical ranking factor. By utilizing Vite's native bundler settings, splitting major route bundles, lazy-loading offscreen images with modern webp compression, and avoiding heavy client libraries, we can achieve high performance on mobile devices. This translates to higher conversion rates and happier visitors.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
+    }
+  ],
   team: [
     {
       name: "Marcus Vance",
