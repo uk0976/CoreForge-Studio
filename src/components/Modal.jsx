@@ -51,7 +51,9 @@ const Modal = ({ isOpen, onClose, children }) => {
           border: '1px solid var(--glass-border)',
           borderRadius: '24px',
           position: 'relative',
-          overflowY: 'auto',
+          overflowY: 'hidden',
+          display: 'flex',
+          flexDirection: 'column',
           animation: 'slide-up-modal 0.5s cubic-bezier(0.25, 1, 0.5, 1)',
           boxShadow: '0 25px 60px rgba(0, 0, 0, 0.8)'
         }}
@@ -81,8 +83,16 @@ const Modal = ({ isOpen, onClose, children }) => {
           <X size={18} />
         </button>
 
-        {/* Modal Inner Body */}
-        <div style={{ padding: '3.5rem' }}>
+        {/* Modal Inner Body (Scrollable Container) */}
+        <div 
+          className="modal-inner-scroll"
+          style={{ 
+            padding: '3.5rem', 
+            overflowY: 'auto', 
+            maxHeight: 'calc(90vh - 10px)',
+            width: '100%'
+          }}
+        >
           {children}
         </div>
       </div>
@@ -90,20 +100,17 @@ const Modal = ({ isOpen, onClose, children }) => {
       <style>{`
         @keyframes slide-up-modal {
           from {
+            transform: translateY(50px);
             opacity: 0;
-            transform: translateY(40px) scale(0.98);
           }
           to {
+            transform: translateY(0);
             opacity: 1;
-            transform: translateY(0) scale(1);
           }
         }
         @media (max-width: 768px) {
           .modal-backdrop {
             padding: 1rem !important;
-          }
-          .modal-content {
-            max-height: 95vh !important;
           }
           .modal-content > div {
             padding: 2rem 1.5rem !important;

@@ -192,6 +192,22 @@ const Portfolio = () => {
                 </ul>
               </div>
 
+              {/* Close/Back button at the bottom of the content */}
+              <button 
+                onClick={() => setSelectedConcept(null)}
+                className="btn btn-secondary interactive-hover"
+                style={{ 
+                  marginTop: '1.5rem', 
+                  alignSelf: 'flex-start',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  width: 'auto'
+                }}
+              >
+                <span>← Close details & Go back</span>
+              </button>
+
             </div>
           </div>
         )}

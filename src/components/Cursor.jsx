@@ -126,6 +126,11 @@ const Cursor = () => {
           border: 1px solid #00f0ff !important;
           box-shadow: 0 0 15px rgba(0, 240, 255, 0.5) !important;
         }
+        @media (max-width: 768px) {
+          .cursor-glow, .cursor-dot {
+            display: none !important;
+          }
+        }
       `}</style>
     </>
   );
