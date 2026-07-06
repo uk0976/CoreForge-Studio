@@ -5,6 +5,16 @@ import { agencyData } from '../data/agencyData';
 const Services = ({ currency = { code: 'INR', symbol: '₹', rate: 83.5 } }) => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
+  // Helper to round currency amounts to nearest 500 or 100 for Indian Market rates
+  const formatPrice = (priceVal) => {
+    const converted = priceVal * currency.rate;
+    if (currency.code === 'INR') {
+      // Round to nearest 500
+      return Math.round(converted / 500) * 500;
+    }
+    return Math.round(converted);
+  };
+
   return (
     <div style={{ paddingTop: '8rem' }}>
       {/* Header */}
@@ -68,7 +78,7 @@ const Services = ({ currency = { code: 'INR', symbol: '₹', rate: 83.5 } }) => 
                   }}
                 >
                   <Tag size={12} />
-                  <span>Est. {currency.symbol}{Math.round(service.cost * currency.rate).toLocaleString()}</span>
+                  <span>Est. {currency.symbol}{formatPrice(service.cost).toLocaleString()}</span>
                 </span>
 
                 {/* Timeline Badge */}
