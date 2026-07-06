@@ -3,6 +3,16 @@ import { Check, Clock, ShieldCheck, Plus, HelpCircle, ArrowRight } from 'lucide-
 import { agencyData } from '../data/agencyData';
 
 const Pricing = ({ currency = { code: 'INR', symbol: '₹', rate: 83.5 } }) => {
+  // Helper to round currency amounts to nearest 500 or 100 for Indian Market rates
+  const formatPrice = (priceVal) => {
+    const converted = priceVal * currency.rate;
+    if (currency.code === 'INR') {
+      // Round to nearest 500
+      return Math.round(converted / 500) * 500;
+    }
+    return Math.round(converted);
+  };
+
   // Optional add-ons pricing
   const optionalAddons = [
     { name: "Extra Custom Page Design & Code", price: 40, suffix: " / page" },
@@ -43,7 +53,7 @@ const Pricing = ({ currency = { code: 'INR', symbol: '₹', rate: 83.5 } }) => {
               
               <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'baseline', gap: '0.25rem' }}>
                 <span style={{ fontSize: '2.8rem', fontWeight: 800, fontFamily: 'var(--font-headings)' }}>
-                  {currency.symbol}{Math.round(tier.price * currency.rate).toLocaleString()}
+                  {currency.symbol}{formatPrice(tier.price).toLocaleString()}
                 </span>
                 <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
                   / fixed project cost
@@ -169,7 +179,7 @@ const Pricing = ({ currency = { code: 'INR', symbol: '₹', rate: 83.5 } }) => {
                 <span style={{ fontWeight: 600, color: '#fff', fontSize: '0.95rem' }}>{addon.name}</span>
               </div>
               <span style={{ fontWeight: 700, color: '#00f0ff', fontSize: '0.95rem' }}>
-                {currency.symbol}{Math.round(addon.price * currency.rate).toLocaleString()}{addon.suffix}
+                {currency.symbol}{formatPrice(addon.price).toLocaleString()}{addon.suffix}
               </span>
             </div>
           ))}
