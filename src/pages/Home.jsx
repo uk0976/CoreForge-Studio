@@ -6,6 +6,16 @@ const Home = ({ setRoute, currency = { code: 'INR', symbol: '₹', rate: 83.5 } 
   const canvasRef = useRef(null);
   const [openFaq, setOpenFaq] = useState(null);
 
+  // Helper to round currency amounts to nearest 500 or 100 for Indian Market rates
+  const formatPrice = (priceVal) => {
+    const converted = priceVal * currency.rate;
+    if (currency.code === 'INR') {
+      // Round to nearest 500
+      return Math.round(converted / 500) * 500;
+    }
+    return Math.round(converted);
+  };
+
   // Background Interactive Canvas Particle Network
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -236,7 +246,7 @@ const Home = ({ setRoute, currency = { code: 'INR', symbol: '₹', rate: 83.5 } 
           {agencyData.servicesList.slice(0, 3).map((service, i) => (
             <div className="glass-panel" key={i} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
               <div style={{ display: 'inline-flex', alignSelf: 'flex-start', background: 'rgba(0, 240, 255, 0.05)', color: '#00f0ff', border: '1px solid rgba(0, 240, 255, 0.15)', borderRadius: '50px', padding: '0.35rem 0.85rem', fontSize: '0.75rem', fontWeight: 600, marginBottom: '1.5rem' }}>
-                Starting at {currency.symbol}{Math.round(service.cost * currency.rate).toLocaleString()}
+                Starting at {currency.symbol}{formatPrice(service.cost).toLocaleString()}
               </div>
               <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem' }}>{service.title}</h3>
               <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', flexGrow: 1, marginBottom: '2rem' }}>
