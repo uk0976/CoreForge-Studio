@@ -5,10 +5,10 @@ import { agencyData } from '../data/agencyData';
 const Pricing = ({ currency = { code: 'INR', symbol: '₹', rate: 83.5 } }) => {
   // Optional add-ons pricing
   const optionalAddons = [
-    { name: "Extra Custom Page Design & Code", price: 250, suffix: " / page" },
-    { name: "Bespoke Vector Logo Design", price: 490, suffix: "" },
-    { name: "Copywriting Content Strategy (5 pages)", price: 650, suffix: "" },
-    { name: "Additional Month Maintenance Support", price: 150, suffix: " / mo" }
+    { name: "Extra Custom Page Design & Code", price: 40, suffix: " / page" },
+    { name: "Bespoke Vector Logo Design", price: 80, suffix: "" },
+    { name: "Copywriting Content Strategy (5 pages)", price: 100, suffix: "" },
+    { name: "Additional Month Maintenance Support", price: 25, suffix: " / mo" }
   ];
 
   return (

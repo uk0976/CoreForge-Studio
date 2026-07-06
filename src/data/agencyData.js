@@ -214,7 +214,7 @@ export const agencyData = {
   pricing: [
     {
       name: "Starter Package",
-      price: 1490,
+      price: 249,
       description: "Perfect for freelancers, creators, and local service providers needing a premium showcase site.",
       features: [
         "Up to 4 Custom Designed Pages",
@@ -230,7 +230,7 @@ export const agencyData = {
     },
     {
       name: "Professional Package",
-      price: 2890,
+      price: 499,
       description: "Ideal for growing businesses, startups, and agencies requiring rich layouts and calendar booking.",
       features: [
         "Up to 8 Custom Designed Pages",
@@ -246,7 +246,7 @@ export const agencyData = {
     },
     {
       name: "Business Package",
-      price: 4900,
+      price: 899,
       description: "For companies needing advanced e-commerce grids, custom database schemas, or database routing.",
       features: [
         "Custom E-commerce Shopping Grid",

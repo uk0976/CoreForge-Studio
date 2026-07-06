@@ -102,7 +102,7 @@ const Contact = () => {
     email: '',
     businessName: '',
     projectType: 'Business Website',
-    budget: 'Professional Package ($1,490 - $2,890)',
+    budget: 'Professional Package ($499)',
     timeline: 'Standard (4 - 6 Weeks)',
     details: ''
   });
@@ -254,9 +254,9 @@ const Contact = () => {
               <CustomSelect 
                 label="Budget Range"
                 options={[
-                  "Starter Package ($1,490)",
-                  "Professional Package ($1,490 - $2,890)",
-                  "Business Package ($4,900)",
+                  "Starter Package ($249)",
+                  "Professional Package ($499)",
+                  "Business Package ($899)",
                   "Custom Retainer (Enterprise)"
                 ]}
                 value={formData.budget}

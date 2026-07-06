@@ -105,7 +105,7 @@ const BookConsultation = () => {
     phone: '',
     businessName: '',
     projectType: 'Business Website',
-    budget: 'Professional Package ($1.5k - $3k)',
+    budget: 'Professional Package ($499)',
     timeline: 'Standard (4 - 6 Weeks)',
     features: []
   });
@@ -316,9 +316,9 @@ const BookConsultation = () => {
                 <CustomSelect 
                   label="Budget Range"
                   options={[
-                    "Starter Package ($1,490)",
-                    "Professional Package ($1.5k - $3k)",
-                    "Business Package ($4,900)",
+                    "Starter Package ($249)",
+                    "Professional Package ($499)",
+                    "Business Package ($899)",
                     "Custom Retainer (Enterprise)"
                   ]}
                   value={formData.budget}
