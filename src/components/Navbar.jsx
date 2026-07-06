@@ -301,7 +301,9 @@ const Navbar = ({ currentRoute, setRoute, currency, setCurrency }) => {
           justifyContent: 'center',
           transform: isMenuOpen ? 'translateY(0)' : 'translateY(-100%)',
           transition: 'transform 0.6s cubic-bezier(0.85, 0, 0.15, 1)',
-          padding: '6rem 2rem 2rem'
+          padding: '6rem 2rem 2rem',
+          visibility: isMenuOpen ? 'visible' : 'hidden',
+          pointerEvents: isMenuOpen ? 'auto' : 'none'
         }}
       >
         <div 
