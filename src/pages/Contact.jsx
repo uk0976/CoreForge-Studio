@@ -130,7 +130,7 @@ const Contact = () => {
       email: '',
       businessName: '',
       projectType: 'Business Website',
-      budget: 'Professional Package ($1,490 - $2,890)',
+      budget: 'Professional Package ($499)',
       timeline: 'Standard (4 - 6 Weeks)',
       details: ''
     });
