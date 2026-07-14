@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Check, Clock, ShieldCheck, Plus, HelpCircle, ArrowRight } from 'lucide-react';
 import { agencyData } from '../data/agencyData';
 
 const Pricing = ({ currency = { code: 'INR', symbol: '₹', rate: 83.5 } }) => {
+  const [traffic, setTraffic] = useState(5000);
+  const [orderValue, setOrderValue] = useState(150); // in USD
+  const [bounceRate, setBounceRate] = useState(60);
+
+  // Math/Logic for conversions
+  const visitorRecovery = traffic * (bounceRate / 100) * 0.3;
+  const conversionLift = traffic * 0.018;
+  const additionalRevenue = (visitorRecovery + conversionLift) * orderValue;
+
   // Helper to round currency amounts to nearest 500 or 100 for Indian Market rates
   const formatPrice = (priceVal) => {
     const converted = priceVal * currency.rate;
@@ -186,11 +195,127 @@ const Pricing = ({ currency = { code: 'INR', symbol: '₹', rate: 83.5 } }) => {
         </div>
       </section>
 
+      {/* Dynamic ROI Savings Calculator */}
+      <section className="section" style={{ paddingBottom: '8rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <span style={{ color: '#00f0ff', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.9rem', fontWeight: 700 }}>Interactive Tool</span>
+          <h2 style={{ fontSize: '2.2rem', marginTop: '0.5rem' }}>ROI & Performance Calculator</h2>
+          <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0.5rem auto 0', fontSize: '0.95rem' }}>
+            Estimate the revenue increase you can unlock by switching from a slow, template website to a custom-coded CoreForge site.
+          </p>
+        </div>
+
+        <div 
+          className="roi-split-panel glass-panel"
+          style={{
+            maxWidth: '900px',
+            margin: '0 auto',
+            display: 'grid',
+            gridTemplateColumns: '1.2fr 1fr',
+            gap: '3.5rem',
+            padding: '3rem',
+            background: 'linear-gradient(135deg, rgba(12, 12, 20, 0.9) 0%, rgba(255,255,255,0.01) 100%)',
+            border: '1px solid var(--glass-border)',
+            borderRadius: '24px'
+          }}
+        >
+          {/* Sliders Form */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                <label style={{ fontSize: '0.9rem', fontWeight: 600, color: '#fff' }}>Est. Monthly Website Traffic</label>
+                <span style={{ color: '#00f0ff', fontWeight: 700 }}>{traffic.toLocaleString()} visitors</span>
+              </div>
+              <input 
+                type="range" 
+                min="500" 
+                max="50000" 
+                step="500"
+                value={traffic} 
+                onChange={(e) => setTraffic(Number(e.target.value))}
+                style={{ width: '100%', accentColor: '#00f0ff', cursor: 'pointer' }}
+              />
+            </div>
+
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                <label style={{ fontSize: '0.9rem', fontWeight: 600, color: '#fff' }}>Average Customer Value (Lead / Order)</label>
+                <span style={{ color: '#8b5cf6', fontWeight: 700 }}>{currency.symbol}{Math.round(orderValue * currency.rate).toLocaleString()}</span>
+              </div>
+              <input 
+                type="range" 
+                min="10" 
+                max="1000" 
+                step="10"
+                value={orderValue} 
+                onChange={(e) => setOrderValue(Number(e.target.value))}
+                style={{ width: '100%', accentColor: '#8b5cf6', cursor: 'pointer' }}
+              />
+            </div>
+
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                <label style={{ fontSize: '0.9rem', fontWeight: 600, color: '#fff' }}>Current Website Bounce Rate</label>
+                <span style={{ color: '#d946ef', fontWeight: 700 }}>{bounceRate}%</span>
+              </div>
+              <input 
+                type="range" 
+                min="30" 
+                max="90" 
+                step="5"
+                value={bounceRate} 
+                onChange={(e) => setBounceRate(Number(e.target.value))}
+                style={{ width: '100%', accentColor: '#d946ef', cursor: 'pointer' }}
+              />
+            </div>
+          </div>
+
+          {/* ROI Output Card */}
+          <div 
+            style={{ 
+              background: 'rgba(5, 5, 10, 0.4)', 
+              border: '1px solid rgba(0, 240, 255, 0.1)', 
+              borderRadius: '16px', 
+              padding: '2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              textAlign: 'center'
+            }}
+          >
+            <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Est. Additional Monthly Revenue
+            </span>
+            <div style={{ fontSize: '2.2rem', fontWeight: 800, color: '#10b981', margin: '0.5rem 0', fontFamily: 'var(--font-headings)' }}>
+              {currency.symbol}{formatPrice(additionalRevenue).toLocaleString()}
+            </div>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.5, margin: '0 0 1.5rem' }}>
+              Based on reducing bounce rate by <strong>{Math.round(bounceRate * 0.3)}%</strong> (due to loading under 1s) and achieving a conservative <strong>+1.8% conversion lift</strong> in form/checkout completions.
+            </p>
+            <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1.25rem', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}>
+              <div>
+                <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Speed Increase</div>
+                <div style={{ fontSize: '1rem', fontWeight: 700, color: '#00f0ff', marginTop: '0.2rem' }}>Up to 5x Faster</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Google PageSpeed</div>
+                <div style={{ fontSize: '1rem', fontWeight: 700, color: '#8b5cf6', marginTop: '0.2rem' }}>98+ Score</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <style>{`
         @media (max-width: 900px) {
           .enterprise-quote-panel {
             grid-template-columns: 1fr !important;
             gap: 2.5rem !important;
+          }
+          .roi-split-panel {
+            grid-template-columns: 1fr !important;
+            gap: 2.5rem !important;
+            padding: 1.5rem !important;
           }
           .addon-row-panel {
             flex-direction: column;

@@ -3,6 +3,33 @@ import { Layers, Database, Cloud, Cpu, FileJson, Wallet, Send, BarChart2, Shield
 
 const Technologies = () => {
   const [activeCategory, setActiveCategory] = useState('Frontend');
+  const [selectedElement, setSelectedElement] = useState(null);
+
+  const periodicElements = [
+    { symbol: "Rt", name: "React", weight: "9.8", category: "Frontend", color: "#00f0ff", desc: "Component-based user interface rendering library." },
+    { symbol: "Nx", name: "Next.js", weight: "9.5", category: "Frontend", color: "#00f0ff", desc: "Server rendering, static optimization, and SEO routing." },
+    { symbol: "Ts", name: "TypeScript", weight: "9.0", category: "Frontend", color: "#00f0ff", desc: "Strict type safety structure to eliminate syntax runtime bugs." },
+    { symbol: "Gs", name: "GSAP", weight: "8.5", category: "Frontend", color: "#00f0ff", desc: "GreenSock timeline animations and scroll trigger effects." },
+    { symbol: "Fm", name: "Framer", weight: "8.2", category: "Frontend", color: "#00f0ff", desc: "React layout transitions and micro-state button animations." },
+    { symbol: "Tw", name: "Tailwind", weight: "7.8", category: "Frontend", color: "#00f0ff", desc: "Utility-first css prototyping classes when requested." },
+
+    { symbol: "Nd", name: "Node.js", weight: "9.2", category: "Backend", color: "#8b5cf6", desc: "Event-driven runtime engine for high-speed API servers." },
+    { symbol: "Ex", name: "Express", weight: "8.0", category: "Backend", color: "#8b5cf6", desc: "JSON REST routing middleware API layers." },
+
+    { symbol: "Mg", name: "MongoDB", weight: "8.8", category: "Database", color: "#d946ef", desc: "Flexible NoSQL document collections for forms and data schemas." },
+    { symbol: "Pg", name: "Postgres", weight: "9.0", category: "Database", color: "#d946ef", desc: "Robust structured relational tables for enterprise data sets." },
+    { symbol: "Pr", name: "Prisma", weight: "8.2", category: "Database", color: "#d946ef", desc: "Type-safe database query mappings and schemas ORM." },
+
+    { symbol: "Aw", name: "AWS S3", weight: "9.5", category: "Cloud", color: "#10b981", desc: "Secure media assets bucket file storage systems." },
+    { symbol: "Vc", name: "Vercel", weight: "9.8", category: "Cloud", color: "#10b981", desc: "Global edge CDN server network hosting under 50ms latency." },
+    { symbol: "Cf", name: "Cloudflare", weight: "9.6", category: "Cloud", color: "#10b981", desc: "DNS routing, SSL gateway rules, and DDoS shield protection." },
+
+    { symbol: "Op", name: "OpenAI GPT", weight: "9.4", category: "AI", color: "#f59e0b", desc: "Context-trained models for custom chatbot integration." },
+    { symbol: "Ge", name: "Gemini", weight: "9.2", category: "AI", color: "#f59e0b", desc: "Multimodal analysis pipeline queries and data mappings." },
+
+    { symbol: "St", name: "Stripe", weight: "9.8", category: "Payments", color: "#ec4899", desc: "Credit card invoice checkouts and billing portals." },
+    { symbol: "Sa", name: "Sanity.io", weight: "8.5", category: "CMS", color: "#06b6d4", desc: "Headless real-time schema blog posting editor dashboards." }
+  ];
 
   // Categorized tech ecosystem matching all 10 requested columns
   const techData = {
@@ -149,6 +176,76 @@ const Technologies = () => {
           </div>
 
         </div>
+      </section>
+
+      {/* Interactive Periodic Table of Dev Stack */}
+      <section className="section" style={{ paddingBottom: '8rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <span style={{ color: '#8b5cf6', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.9rem', fontWeight: 700 }}>Interactive Explorer</span>
+          <h2 style={{ fontSize: '2.2rem', marginTop: '0.5rem' }}>Periodic Table of Technologies</h2>
+          <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0.5rem auto 0', fontSize: '0.95rem' }}>
+            Tap any elements card in the periodic grid to view details of our coding stack integrations.
+          </p>
+        </div>
+
+        <div className="periodic-table">
+          {periodicElements.map((el, i) => (
+            <div 
+              key={i} 
+              className="element-card"
+              onClick={() => setSelectedElement(selectedElement === el ? null : el)}
+              style={{
+                borderColor: selectedElement?.symbol === el.symbol ? el.color : 'var(--glass-border)',
+                boxShadow: selectedElement?.symbol === el.symbol ? `0 0 15px ${el.color}` : 'none',
+                background: selectedElement?.symbol === el.symbol ? 'rgba(255,255,255,0.02)' : 'var(--glass-bg)',
+                transform: selectedElement?.symbol === el.symbol ? 'scale(1.02)' : 'scale(1)',
+                padding: '1.25rem 1rem'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                <span>{el.weight}</span>
+                <span style={{ color: el.color, fontWeight: 700 }}>{el.category[0]}</span>
+              </div>
+              <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#fff', textAlign: 'center', margin: '0.4rem 0', fontFamily: 'var(--font-headings)' }}>
+                {el.symbol}
+              </div>
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-secondary)', textAlign: 'center', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                {el.name}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Selected Element Details Panel */}
+        {selectedElement && (
+          <div 
+            className="glass-panel"
+            style={{ 
+              marginTop: '3rem', 
+              padding: '2.5rem', 
+              borderLeft: `4px solid ${selectedElement.color}`,
+              background: 'linear-gradient(135deg, rgba(5,5,10,0.9) 0%, rgba(255,255,255,0.01) 100%)'
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1.5rem' }}>
+              <div>
+                <span style={{ color: selectedElement.color, textTransform: 'uppercase', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.05em' }}>
+                  {selectedElement.category} Element Details
+                </span>
+                <h3 style={{ fontSize: '1.6rem', color: '#fff', marginTop: '0.25rem', marginBottom: '0.5rem' }}>
+                  {selectedElement.name} ({selectedElement.symbol})
+                </h3>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', margin: 0, lineHeight: 1.6 }}>
+                  {selectedElement.desc}
+                </p>
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', padding: '0.8rem 1.4rem', borderRadius: '10px', border: '1px solid var(--glass-border)', flexShrink: 0 }}>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>INTEGRATION SCORE</div>
+                <div style={{ fontSize: '1.4rem', fontWeight: 800, color: selectedElement.color }}>{selectedElement.weight} / 10</div>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       <style>{`
