@@ -352,13 +352,13 @@ export const agencyData = {
     {
       name: "Umer Khan",
       role: "Founder",
-      bio: "Umer drives the creative vision, business operations, and core product strategy at CoreForge Studio.",
+      bio: "Umer leads the creative direction and product strategy at CoreForge Studio. With a strong foundation in modern user experience (UX) and interface design, he bridges the gap between client requirements and high-fidelity digital solutions to establish market authority.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
     },
     {
       name: "Shanum",
       role: "Co-Founder",
-      bio: "Shanum leads technical operations, software architectures, and backend database integrations.",
+      bio: "Shanum oversees full-stack systems engineering and cloud deployments. Specializing in secure database architecture, performance optimization, and custom REST API development, she ensures all CoreForge builds load in under 1 second.",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
     }
   ]
