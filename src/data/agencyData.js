@@ -350,21 +350,15 @@ export const agencyData = {
   ],
   team: [
     {
-      name: "Marcus Vance",
-      role: "Founder & Creative Director",
-      bio: "Marcus combines visual design principles with high-performance code architecture to lead client strategies.",
+      name: "Umer Khan",
+      role: "Founder",
+      bio: "Umer drives the creative vision, business operations, and core product strategy at CoreForge Studio.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
     },
     {
-      name: "Elena Rostova",
-      role: "Head of Creative Development",
-      bio: "Elena is a digital wizard who crafts interactive web designs with GSAP, WebGL, and Three.js. Her past creative works have been recognized on major galleries like Awwwards and FWA.",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80"
-    },
-    {
-      name: "Devon Chen",
-      role: "Lead Full-Stack Architect",
-      bio: "Devon specializes in headless e-commerce integrations, relational database routing, and serverless Node.js endpoints.",
+      name: "Shanum",
+      role: "Co-Founder",
+      bio: "Shanum leads technical operations, software architectures, and backend database integrations.",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
     }
   ]
