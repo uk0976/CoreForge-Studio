@@ -86,6 +86,7 @@ const Modal = ({ isOpen, onClose, children }) => {
         {/* Modal Inner Body (Scrollable Container) */}
         <div 
           className="modal-inner-scroll"
+          data-lenis-prevent
           style={{ 
             padding: '3.5rem', 
             overflowY: 'auto', 
