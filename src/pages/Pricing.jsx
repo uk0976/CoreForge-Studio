@@ -46,7 +46,7 @@ const Pricing = ({ currency = { code: 'INR', symbol: '₹', rate: 83.5 } }) => {
         {agencyData.pricing.map((tier, i) => (
           <div 
             key={i} 
-            className="glass-panel"
+            className="glass-panel laser-bracket-h"
             style={{ 
               display: 'flex', 
               flexDirection: 'column', 

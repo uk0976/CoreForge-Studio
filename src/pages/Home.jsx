@@ -171,6 +171,11 @@ const Home = ({ setRoute, currency = { code: 'INR', symbol: '₹', rate: 83.5 } 
           padding: '8rem 2rem 6rem'
         }}
       >
+        {/* Cybernetic Grid & Scanning Overlays */}
+        <div className="cyber-grid-bg" />
+        <div className="cyber-scanlines" />
+        <div className="cyber-laser-beam" />
+
         <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 1 }} />
         
         {/* Vignette Overlay */}
@@ -193,7 +198,7 @@ const Home = ({ setRoute, currency = { code: 'INR', symbol: '₹', rate: 83.5 } 
 
           <h1 className="hero-headline" style={{ marginBottom: '1.5rem' }}>
             We Build Websites That <br />
-            <span className="gradient-text glow-text">Grow Businesses.</span>
+            <span className="gradient-text glow-text glow-text-pulse">Grow Businesses.</span>
           </h1>
 
           <p style={{ maxWidth: '750px', margin: '0 auto 3rem', fontSize: '1.25rem', color: 'var(--text-secondary)' }}>
@@ -244,7 +249,7 @@ const Home = ({ setRoute, currency = { code: 'INR', symbol: '₹', rate: 83.5 } 
 
         <div className="grid-3">
           {agencyData.servicesList.slice(0, 3).map((service, i) => (
-            <div className="glass-panel" key={i} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+            <div className="glass-panel laser-bracket-h" key={i} style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
               <div style={{ display: 'inline-flex', alignSelf: 'flex-start', background: 'rgba(0, 240, 255, 0.05)', color: '#00f0ff', border: '1px solid rgba(0, 240, 255, 0.15)', borderRadius: '50px', padding: '0.35rem 0.85rem', fontSize: '0.75rem', fontWeight: 600, marginBottom: '1.5rem' }}>
                 Starting at {currency.symbol}{formatPrice(service.cost).toLocaleString()}
               </div>

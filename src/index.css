@@ -685,3 +685,130 @@ select option {
     opacity: 1;
   }
 }
+
+/* Futuristic Cyberpunk & Cinematic Animations */
+.cyber-scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.15) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.cyber-laser-beam {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 240, 255, 0.8) 50%, transparent 100%);
+  box-shadow: 0 0 15px #00f0ff, 0 0 30px rgba(139, 92, 246, 0.8);
+  z-index: 2;
+  pointer-events: none;
+  animation: laserSweepVertical 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes laserSweepVertical {
+  0% { top: 0%; opacity: 0; }
+  5% { opacity: 0.6; }
+  95% { opacity: 0.6; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.cyber-grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 240, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.02) 1px, transparent 1px);
+  z-index: 1;
+  pointer-events: none;
+  animation: gridDrift 40s linear infinite;
+}
+
+@keyframes gridDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
+}
+
+.glow-text-pulse {
+  animation: cyberPulseText 3s ease-in-out infinite alternate;
+}
+
+@keyframes cyberPulseText {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.4), 0 0 10px rgba(139, 92, 246, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.8), 0 0 25px rgba(139, 92, 246, 0.5), 0 0 35px rgba(0, 240, 255, 0.4);
+  }
+}
+
+/* Glass panel hover enhancements */
+.glass-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgba(0, 240, 255, 0.1) 50%,
+    transparent 55%
+  );
+  transform: rotate(-45deg);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+}
+
+.glass-panel:hover::after {
+  opacity: 1;
+  transform: translate(50%, 50%) rotate(-45deg);
+}
+
+.glass-panel:hover {
+  border-color: rgba(0, 240, 255, 0.25) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 240, 255, 0.05) !important;
+}
+
+/* Interactive custom elements */
+.laser-bracket-h {
+  position: relative;
+}
+.laser-bracket-h::before, .laser-bracket-h::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: #00f0ff;
+  border-style: solid;
+  opacity: 0.7;
+}
+.laser-bracket-h::before {
+  top: -5px; left: -5px;
+  border-width: 2px 0 0 2px;
+}
+.laser-bracket-h::after {
+  bottom: -5px; right: -5px;
+  border-width: 0 2px 2px 0;
+}
