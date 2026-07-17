@@ -28,12 +28,12 @@ const Cursor = () => {
       // Interpolate main glow (slower, smooth follow)
       cursorX += (mouseX - cursorX) * 0.08;
       cursorY += (mouseY - cursorY) * 0.08;
-      cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
+      cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
 
       // Interpolate center dot (faster, tighter follow)
       dotX += (mouseX - dotX) * 0.25;
       dotY += (mouseY - dotY) * 0.25;
-      dot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0)`;
+      dot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
 
       requestAnimationFrame(tick);
     };
