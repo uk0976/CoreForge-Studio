@@ -114,6 +114,11 @@ const Cursor = () => {
       />
 
       <style>{`
+        @media (min-width: 769px) {
+          html, body, a, button, select, input, textarea, [role="button"], .interactive-hover {
+            cursor: none !important;
+          }
+        }
         .cursor-hover-active {
           width: 500px !important;
           height: 500px !important;
