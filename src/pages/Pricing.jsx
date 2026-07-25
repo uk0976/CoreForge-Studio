@@ -195,6 +195,77 @@ const Pricing = ({ currency = { code: 'INR', symbol: '₹', rate: 83.5 } }) => {
         </div>
       </section>
 
+      {/* Cost Advantage Comparison Table */}
+      <section className="section" style={{ paddingBottom: '6rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <span style={{ color: '#8b5cf6', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.9rem', fontWeight: 700 }}>Market Advantage</span>
+          <h2 style={{ fontSize: '2.2rem', marginTop: '0.5rem' }}>Our Pricing vs. Industry Average</h2>
+          <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0.5rem auto 0', fontSize: '0.95rem' }}>
+            We keep our operating overhead minimal to deliver custom designs and hand-written React code at under 20% of traditional agency rates.
+          </p>
+        </div>
+
+        <div 
+          className="glass-panel" 
+          style={{ 
+            maxWidth: '900px', 
+            margin: '0 auto', 
+            padding: '2.5rem',
+            border: '1px solid var(--glass-border)',
+            background: 'var(--glass-bg)',
+            overflowX: 'auto'
+          }}
+        >
+          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+            <thead>
+              <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Service / Plan</th>
+                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Traditional Agency</th>
+                <th style={{ padding: '1rem', color: '#00f0ff', fontSize: '0.85rem', textTransform: 'uppercase', fontWeight: 700 }}>CoreForge Cost</th>
+                <th style={{ padding: '1rem', color: '#10b981', fontSize: '0.85rem', textTransform: 'uppercase', fontWeight: 700, textAlign: 'right' }}>Your Savings</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { name: "Starter (Landing Page)", average: 1490, current: 249 },
+                { name: "Professional (Business Site)", average: 2890, current: 499 },
+                { name: "Business (E-Commerce / SaaS)", average: 4990, current: 899 },
+                { name: "Extra Custom Page", average: 200, current: 40 },
+                { name: "Bespoke Vector Logo", average: 400, current: 80 }
+              ].map((item, index) => {
+                const savingsPercent = Math.round(((item.average - item.current) / item.average) * 100);
+                const formatAverage = (priceVal) => {
+                  const converted = priceVal * currency.rate;
+                  if (currency.code === 'INR') {
+                    return Math.round(converted / 500) * 500;
+                  }
+                  return Math.round(converted);
+                };
+                return (
+                  <tr 
+                    key={index} 
+                    style={{ 
+                      borderBottom: index === 4 ? 'none' : '1px solid rgba(255, 255, 255, 0.04)'
+                    }}
+                  >
+                    <td style={{ padding: '1.25rem 1rem', fontWeight: 600, color: '#fff', fontSize: '0.95rem' }}>{item.name}</td>
+                    <td style={{ padding: '1.25rem 1rem', color: 'var(--text-secondary)', textDecoration: 'line-through', fontSize: '0.95rem' }}>
+                      {currency.symbol}{formatAverage(item.average).toLocaleString()}
+                    </td>
+                    <td style={{ padding: '1.25rem 1rem', color: '#00f0ff', fontWeight: 800, fontSize: '0.95rem' }}>
+                      {currency.symbol}{formatPrice(item.current).toLocaleString()}
+                    </td>
+                    <td style={{ padding: '1.25rem 1rem', color: '#10b981', fontWeight: 800, textAlign: 'right', fontSize: '0.95rem' }}>
+                      Save {savingsPercent}%
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* Dynamic ROI Savings Calculator */}
       <section className="section" style={{ paddingBottom: '8rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
