@@ -199,9 +199,9 @@ const Pricing = ({ currency = { code: 'INR', symbol: '₹', rate: 83.5 } }) => {
       <section className="section" style={{ paddingBottom: '6rem' }}>
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <span style={{ color: '#8b5cf6', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: '0.9rem', fontWeight: 700 }}>Market Advantage</span>
-          <h2 style={{ fontSize: '2.2rem', marginTop: '0.5rem' }}>Our Pricing vs. Industry Average</h2>
+          <h2 style={{ fontSize: '2.2rem', marginTop: '0.5rem' }}>Our Pricing vs. Indian Agency Average</h2>
           <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0.5rem auto 0', fontSize: '0.95rem' }}>
-            We keep our operating overhead minimal to deliver custom designs and hand-written React code at under 20% of traditional agency rates.
+            We keep our operating overhead minimal to deliver premium custom React code at rates significantly below the average Indian dev agency.
           </p>
         </div>
 
@@ -220,18 +220,18 @@ const Pricing = ({ currency = { code: 'INR', symbol: '₹', rate: 83.5 } }) => {
             <thead>
               <tr style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
                 <th style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Service / Plan</th>
-                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Traditional Agency</th>
+                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem', textTransform: 'uppercase' }}>Indian Agency Average</th>
                 <th style={{ padding: '1rem', color: '#00f0ff', fontSize: '0.85rem', textTransform: 'uppercase', fontWeight: 700 }}>CoreForge Cost</th>
                 <th style={{ padding: '1rem', color: '#10b981', fontSize: '0.85rem', textTransform: 'uppercase', fontWeight: 700, textAlign: 'right' }}>Your Savings</th>
               </tr>
             </thead>
             <tbody>
               {[
-                { name: "Starter (Landing Page)", average: 1490, current: 249 },
-                { name: "Professional (Business Site)", average: 2890, current: 499 },
-                { name: "Business (E-Commerce / SaaS)", average: 4990, current: 899 },
-                { name: "Extra Custom Page", average: 200, current: 40 },
-                { name: "Bespoke Vector Logo", average: 400, current: 80 }
+                { name: "Starter (Landing Page)", average: 360, current: 249 },
+                { name: "Professional (Business Site)", average: 900, current: 499 },
+                { name: "Business (E-Commerce / SaaS)", average: 2160, current: 899 },
+                { name: "Extra Custom Page", average: 60, current: 40 },
+                { name: "Bespoke Vector Logo", average: 120, current: 80 }
               ].map((item, index) => {
                 const savingsPercent = Math.round(((item.average - item.current) / item.average) * 100);
                 const formatAverage = (priceVal) => {
